@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Petri Dish Simulator</title>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+        <script src = 'builder.js'></script>
+    </head>
+    <body>
+        <style>
+            html,body{
+                margin:0;
+                padding:0;
+                overflow:hidden;
+                font-family:sans-serif;
+            }
+            h1{
+                color:whitesmoke;
+                position:fixed;
+                left: 20px;
+                font-size: 40pt;
+            }
+            button{
+                background-color:rgb(239, 203, 104);
+                color:black;
+                border-radius: 5px;
+                position:fixed;
+                left: 20px;
+                padding:20px;
+                border: none;
+                min-width: 200px;
+                font-size:20pt;
+            }
+            button:hover{
+                background-color:rgb(236, 8, 104);
+            }
+            button:active{
+                background-color:steelblue;
+            }
+        </style>
+        <h1 style = 'top:20px;'>Petri Dish Simulator</h1>
+        <button title='Click and drag to add eye' onmousedown='let n = new eye([mouseX,mouseY],0); n.dragging = true; draggables.push(n);' style='top:150px;'>+ Add eye</button>
+        <button title='Click and drag to add jet' onmousedown='let n = new jet([mouseX,mouseY],0); n.dragging = true; draggables.push(n);' style = 'top:250px;'>+ Add jet</button>
+        <button title='Start evolution simulation' onclick='launch()' style='top:50px;left:auto;right:40px;background-color:rgb(44, 165, 141)'>Start simulation</button>
+    </body>
+</html>

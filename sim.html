@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Petri Dish Simulator</title>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+        <script src = 'sim.js'></script>
+    </head>
+    <body>
+        <style>
+            html,body{
+                margin:0;
+                padding:0;
+                overflow:hidden;
+                font-family:sans-serif;
+            }
+            h1{
+                color:whitesmoke;
+                font-size: 20pt;
+            }
+            button{
+                background-color:whitesmoke;
+                color:black;
+                border-radius: 5px;
+                padding:10px;
+                border: none;
+                font-size:15pt;
+                cursor:pointer;
+            }
+            button:hover{
+                background-color:rgb(230, 55, 177);
+            }
+            button:active{
+                background-color:steelblue;
+            }
+            #container{
+                background-color:rgba(100,100,100,0.5);
+                position:fixed;
+            }
+            #contents{
+                padding:30px;
+            }
+            #slower{
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+            }
+            #faster{
+                border-top-right-radius: 50%;
+                border-bottom-right-radius: 50%;
+            }
+        </style>
+        <div id='container'>
+            <div id='contents'>
+                <h1>Petri Dish Simulator</h1>
+                <button title='Slow down!' id=slower>&lt;</button>
+                <span style='margin-left:10px;margin-right:10px;'><p style='display:inline;color:white;font-size:20px;'>1x</p></span>
+                <button title='Speed up!' id=faster>&gt;</button>
+                <button title='Back to the drawing board!' onclick='revert()' style='background-color:rgb(44, 165, 141);margin-left:30px;'>Back</button>
+            </div>
+        </div>
+    </body>
+</html>

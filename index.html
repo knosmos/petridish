@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <style>
+            html,body{
+                padding:0;
+                margin:0;
+                font-family:sans-serif;
+                height:100%;
+            }
+            #title-block{
+                background-color: rgb(0, 0, 40);
+                width:100%;
+                text-align:center;
+                height:100%;
+            }
+            #title-text{
+                color:white;
+                display: inline-block;
+                font-size:50pt;
+            }
+            #play-text{
+                display:inline-block;
+            }
+            #play-block{
+                background-color: rgb(15, 163, 177);
+                width:50%;
+                text-align:center;
+                border-radius:20px;
+                margin-left:25%;
+                cursor: pointer;
+                border:none;
+                padding:0;
+                transition:width 0.3s,margin-left 0.3s,background-color 0.5s, border-radius 0.7s;
+                box-shadow:0px 0px 20px black;
+            }
+            #play-block:hover{
+                background-color:rgb(239, 71, 111);
+                width:100%;
+                margin-left:0%;
+                border-radius:0px;
+            }
+        </style>
+        <div id=title-block>
+            <br><br> <!--Haha line breaks go brrr-->
+            <div id=stuff-goes-here>
+                <h1 id=title-text>Petri Dish Simulator</h1>
+                <div id=play-block onclick='location.href="builder.html"'><h1 id=play-text>Play</h1></div>
+            </div>
+            <br><br>
+        </div>
+    </body>
+</html>
