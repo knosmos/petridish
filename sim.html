@@ -18,6 +18,9 @@
                 color:whitesmoke;
                 font-size: 20pt;
             }
+            p{
+                color:whitesmoke;
+            }
             button{
                 background-color:whitesmoke;
                 color:black;
@@ -48,14 +51,23 @@
                 border-top-right-radius: 50%;
                 border-bottom-right-radius: 50%;
             }
+            #timeElapsedBar{
+                background-color: steelblue;
+                min-width:10px;
+            }
         </style>
         <div id='container'>
             <div id='contents'>
                 <h1>Petri Dish Simulator</h1>
-                <button title='Slow down!' id=slower>&lt;</button>
-                <span style='margin-left:10px;margin-right:10px;'><p style='display:inline;color:white;font-size:20px;'>1x</p></span>
-                <button title='Speed up!' id=faster>&gt;</button>
+                <button title='Slow down!' id=slower onclick='goSlower();'>&lt;</button>
+                <span style='margin-left:10px;margin-right:10px;'><p style='display:inline;color:white;font-size:20px;' id='timeWarpFactor' onclick='timeWarp=1;this.innerHTML="1x";'>1x</p></span>
+                <button title='Speed up!' id=faster onclick='goFaster();'>&gt;</button>
                 <button title='Back to the drawing board!' onclick='revert()' style='background-color:rgb(44, 165, 141);margin-left:30px;'>Back</button>
+                <br>
+                <p id='gen'>Generation 1</p>
+                <span><p style='display:inline;' id='t-new'></p></span>
+                <p id='best'></p>
+                <p id='avg'></p>
             </div>
         </div>
     </body>

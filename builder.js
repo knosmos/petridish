@@ -215,18 +215,25 @@ function getOriginalData(){
     console.log(n);
     for(let i of n){
         if(i[0] == 'eye'){
-            draggables.push(new eye(i[1],i[2]))
+            draggables.push(new eye(w/2+i[1]*unitSize,h/2+i[2]*unitSize))
         }
         if(i[0] == 'jet'){
-            draggables.push(new jet(i[1],i[2]))
+            draggables.push(new jet(w/2+i[1]*unitSize,h/2+i[2]*unitSize))
         }
     }
+}
+
+try{
+    getOriginalData();
+}
+catch(err){
+    console.log(err);
 }
 
 // Send the user to sim.html
 function launch(){
     // Get all the draggables into a list
-    designData = []
+    designData = [];
     for(let i of draggables){
         designData.push([i.type,[(i.pos[0]-w/2)/unitSize,(i.pos[1]-h/2)/unitSize],i.rotation]);
     }
