@@ -310,6 +310,16 @@ function mutate(someData){
             mdata[state][item] *= 1.1-Math.random()/5;
         }
     }
+    for(let state=0; state<mdata.length; state++){
+        for(let item=0; item<mdata[state].length; item++){
+            if(mdata[state][item]>1){
+                mdata[state][item] = 1; // Set upper bound to 1 to prevent super-fast creatures
+            }
+            else if(mdata[state][item]<0){
+                mdata[state][item] = 0; // Shouldn't ever occur, but I'm putting this in just in case.
+            }
+        }
+    }
     return mdata;
 }
 
@@ -342,7 +352,7 @@ function getStats(){
         avg += i.energy;
     }
     avg /= numCreatures;
-    document.getElementById('avg').innerHTML = 'Average: '+avg.toString();
+    document.getElementById('avg').innerHTML = 'Average: '+avg.toFixed(1);
 }
 
 function draw(){
@@ -359,7 +369,7 @@ function draw(){
     for(let i of foods){
         i.render();
     }
-    for(let i of smokes){
+    for(let i of smokes){ // I just realized that I chose a terrible name for the exhaust particles.
         i.render();
     }
     for(let i=0;i<timeWarp;i++){
