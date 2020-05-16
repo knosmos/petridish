@@ -231,9 +231,12 @@ class creature{
         }
     }
     utilize(){
+        let j=0;
         for(let i=0; i<this.parts.length; i++){
             if(this.parts[i][0]=='jet'){
-                this.energy -= this.data[this.state][i]/5;
+                this.energy -= this.data[this.state][j]/5;
+                console.log(i);
+                j++;
             }
             if(this.parts[i][0]=='eye'){
                 this.energy -= 0.1;
